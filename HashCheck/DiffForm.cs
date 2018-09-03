@@ -162,6 +162,20 @@ namespace HashCheck
             startButton.Enabled = true;
         }
 
+        private void DiffFileTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (noFileCheckBox.Checked)
+            {
+                return;
+            }
+            if (string.IsNullOrEmpty(diffFileTextBox.Text) || string.IsNullOrEmpty(file1TextBox.Text) || string.IsNullOrEmpty(file2TextBox.Text))
+            {
+                startButton.Enabled = false;
+                return;
+            }
+            startButton.Enabled = true;
+        }
+
         private void DiffForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!windowClosing && diffReader != null && diffReader.IsBusy)

@@ -54,12 +54,12 @@ namespace HashCheck.code
         {
             if (!File.Exists(File1))
             {
-                errorMessage = "Error: " + File1 + " doesn't exist.";
+                errorMessage = "Error: First hash file " + File1 + " doesn't exist.";
                 return false;
             }
             if (!File.Exists(File2))
             {
-                errorMessage = "Error: " + File2 + " doesn't exist.";
+                errorMessage = "Error: Second hash file " + File2 + " doesn't exist.";
                 return false;
             }
             if (WriteOutputToFile)

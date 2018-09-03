@@ -97,18 +97,6 @@ namespace HashCheck
             hasher.Start();
         }
 
-        private void RemoveHashFileFromResults()
-        {
-            var hashFileSearchList = (from result in dirScanner.Result
-                        where result.name == outputFileTextBox.Text && result.type == FileSystemItemType.File
-                        select result).ToList();
-            if (0 < hashFileSearchList.Count)
-            {
-                FileSystemItem hashFile = hashFileSearchList.First();
-                dirScanner.Result.Remove(hashFile);
-            }
-        }
-
         private void PauseHashButton_Click(object sender, EventArgs e)
         {
             pauseHashButton.Enabled = false;
@@ -273,6 +261,20 @@ namespace HashCheck
             if (windowClosing)
             {
                 Close();
+            }
+        }
+
+        // misc
+
+        private void RemoveHashFileFromResults()
+        {
+            var hashFileSearchList = (from result in dirScanner.Result
+                                      where result.name == outputFileTextBox.Text && result.type == FileSystemItemType.File
+                                      select result).ToList();
+            if (0 < hashFileSearchList.Count)
+            {
+                FileSystemItem hashFile = hashFileSearchList.First();
+                dirScanner.Result.Remove(hashFile);
             }
         }
     }

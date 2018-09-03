@@ -120,7 +120,7 @@
             this.diffFileButton.Name = "diffFileButton";
             this.diffFileButton.Size = new System.Drawing.Size(130, 23);
             this.diffFileButton.TabIndex = 10;
-            this.diffFileButton.Text = "Diff file:";
+            this.diffFileButton.Text = "Diff output file:";
             this.diffFileButton.UseVisualStyleBackColor = true;
             this.diffFileButton.Click += new System.EventHandler(this.DiffFileButton_Click);
             // 
@@ -130,6 +130,7 @@
             this.diffFileTextBox.Name = "diffFileTextBox";
             this.diffFileTextBox.Size = new System.Drawing.Size(550, 20);
             this.diffFileTextBox.TabIndex = 11;
+            this.diffFileTextBox.TextChanged += new System.EventHandler(this.DiffFileTextBox_TextChanged);
             // 
             // diffRichTextBox
             // 
